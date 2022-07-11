@@ -1,0 +1,15 @@
+.features {
+  display: flex;
+}
+
+.columns {
+  flex: 50%;
+}
+
+.features_list {
+  margin-left: 2%;
+}
+
+.persons {
+  display: flex;
+}

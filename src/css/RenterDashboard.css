@@ -1,0 +1,44 @@
+.renterDashboard {
+  display: flex;
+  margin-top: 20px;
+  background-color: #f2f2f2;
+}
+
+ul {
+  padding-left: 0 !important;
+}
+
+.renterDashboard_menu {
+  margin-top: 10%;
+  margin-left: 6%;
+  border-radius: 10px;
+  padding: 50px;
+  width: 20%;
+  margin-bottom: 10%;
+  background-color: #fff;
+  box-shadow: 0 3px 30px 0 rgb(0 0 0 / 10%);
+  height: fit-content;
+}
+
+.renterDashboard_menuItems {
+  margin: 0 !important;
+}
+
+.renterDashboard_menuItems > li {
+  align-items: center;
+  display: flex;
+  padding: 20px 0px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.renterDashboard_menuItems > li:hover {
+  background-color: lightgreen;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.Content {
+  margin-left: 8px;
+}

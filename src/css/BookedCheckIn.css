@@ -1,0 +1,46 @@
+.first {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fields {
+  margin-right: 30px !important;
+  margin-bottom: 20px !important;
+  margin-left: 60px !important;
+  margin-top: 20px !important;
+}
+
+.card {
+  width: 1200px;
+}
+
+.card-contents {
+  padding: 20px;
+}
+
+.first-form {
+  margin-left: 300px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.second-form {
+  margin-left: 300px;
+}
+
+.n-bottom {
+  margin-top: 7px !important;
+}
+
+.camera-button {
+  background-color: lightskyblue;
+  width: 120px;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  font-weight: bold;
+}
+
+.space-right {
+  margin-left: 360px;
+}

@@ -1,0 +1,58 @@
+.guestDashboard_details {
+  width: 70%;
+  margin-top: 10%;
+  margin-left: 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 30px 0 rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 6%;
+  margin-bottom: 2%;
+}
+
+.guestDashboard_details_contents {
+  padding-top: 20px;
+  margin-left: 30px;
+}
+
+.guestDashboard_details_contents > p {
+  padding: 8px 10px;
+}
+
+.contents {
+  font-size: 18px;
+  font-weight: 500;
+}
+.item {
+  display: flex;
+}
+
+.edit_Icon {
+  width: 20px !important;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.hidden_Item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.hidden_Item_Button {
+  margin-left: 25px;
+}
+
+h5 {
+  color: #888;
+}
+
+.name_Box {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

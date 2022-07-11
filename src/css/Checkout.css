@@ -1,0 +1,129 @@
+.checkout {
+  padding: 12px;
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0 3px 30px 0 rgb(0 0 0 / 10%);
+}
+
+.payment-contents {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.text-fields {
+  display: flex;
+  align-items: center;
+}
+
+.amountbox {
+  margin-left: 15px;
+}
+
+.buttonbox {
+  margin: 10px;
+}
+
+.add-button {
+  width: 40px;
+  border-radius: 20px;
+  margin-left: 120px;
+  border: none;
+  background-color: #5647ff;
+  font-weight: bold;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.remove-button {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ff215c;
+  cursor: pointer;
+}
+
+.amount {
+  margin-left: 80px;
+  display: flex;
+}
+
+.total-amount {
+  margin-left: 10px;
+}
+
+.pay-button {
+  margin-left: 120px;
+  background-color: #5647ff;
+  color: aliceblue;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.download-button {
+  margin-left: 120px;
+  background-color: #5647ff;
+  color: aliceblue;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.title-fields {
+  margin-left: 90px;
+}
+
+.title {
+  margin-left: 40%;
+}
+
+.itembox {
+  height: 25px;
+}
+
+.amountbox {
+  height: 25px;
+}
+
+.fields {
+  display: flex;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-left: 120px;
+}
+
+.item-list {
+  margin-right: 10px;
+}
+
+.save-button {
+  background-color: #ff215c;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 50px;
+  color: aliceblue;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dis {
+  background-color: lightblue;
+  cursor: not-allowed;
+}
+
+.invoice-button {
+  display: flex;
+  justify-content: space-around;
+}
