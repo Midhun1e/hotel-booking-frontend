@@ -1,25 +1,21 @@
 import React from "react";
 import auth from "../../services/authService";
-import {Route, Redirect} from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
-const AdminRoute = ({component: Component, render, ...rest}) => {
+const AdminRoute = ({ component: Component, render, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props => {
-        if (!auth.getCurrentUser()?.isAdmin)
-          return (
-            <Redirect
-              to={{
-                pathname: "/admin/signin",
-                state: {from: props.location},
-              }}
-            />
-          );
-        return Component ? <Component {...props} /> : render(props);
-      }}
+      element={
+        auth.getCurrentUser()?.isAdmin ? (
+          Component ? <Component /> : render()
+        ) : (
+          <Navigate to="/admin/signin" replace state={{ from: rest.location }} />
+        )
+      }
     />
   );
 };
+
 
 export default AdminRoute;

@@ -1,103 +1,101 @@
 import "./App.css";
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import { Routes, Route } from "react-router-dom";
+
+// Common Components
+import NavBar from "./components/common/NavBar";
+import Footer from "./components/common/Footer";
+import NotFound from "./components/common/NotFound";
+import ForgotPassword from "./components/common/ForgotPassword";
+import ResetPassword from "./components/common/ResetPassword";
+import LinkReview from "./components/common/LinkReview";
+import Logout from "./components/common/Logout";
+
+// Pages
 import LandingPage from "./pages/LandingPage";
-import NavBar from "./components/common/NavBar.jsx";
+import AboutPage from "./pages/AboutPage";
+import Contact from "./pages/ContactSupportPage";
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
-import Footer from "./components/common/Footer";
-import ListPropertyPage from "./pages/ListPropertyPage";
 import GuestDashboard from "./pages/GuestDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import ListPropertyPage from "./pages/ListPropertyPage";
 import HotelDetails from "./pages/HotelDetails";
-import AddRoom from "./components/listPropertyPageComponent/AddRoom";
 import RoomCard from "./pages/RoomCard";
-import ReceptionRoute from "./components/common/ReceptionRoute";
-import RestaurantRoute from "./components/common/RestaurantRoute";
-import AdminRoute from "./components/common/AdminRoute";
-import GuestRoute from "./components/common/GuestRoute";
 import RoomDetails from "./pages/RoomDetails";
-import BookedRoomDetails from "./components/RoomDetailsPageComponents/BookedRoomDetails";
+import HotelSidebar from "./pages/HotelSidebar";
+import AddRoomBoy from "./pages/AddRoomBoy";
+
+// Receptionist Components
 import Sidebar from "./components/receptionistArea/Sidebar";
-import ReceptionDashboard from "./pages/ReceptionDashboard";
-import RestaurantDashboard from "./pages/RestaurantDashboard";
-import AboutPage from "./pages/AboutPage";
 import BookedCheckIn from "./components/receptionistArea/BookedCheckIn";
 import CheckOut from "./components/receptionistArea/CheckOut";
+
+// Restaurant Components
 import RestaurantSidebar from "./components/restaurantArea/RestaurantSidebar";
-import AddFoodItem from "./components/restaurantArea/AddFoodItem.jsx";
+import AddFoodItem from "./components/restaurantArea/AddFoodItem";
 import AddItemsToBill from "./components/restaurantArea/AddItemsToBill";
-import HotelSidebar from "./pages/HotelSidebar";
-import AddRoomBoy from './pages/AddRoomBoy';
-import ForgotPassword from './components/common/ForgotPassword';
-import ResetPassword from './components/common/ResetPassword';
-import LinkReview from './components/common/LinkReview';
-import NotFound from './components/common/NotFound';
-import Logout from './components/common/Logout';
-import Contact from './pages/ContactSupportPage'
-import {ToastContainer} from "react-toastify";
-import {Switch, Route} from "react-router-dom";
+
+// Admin Components
+import AddRoom from "./components/listPropertyPageComponent/AddRoom";
+import BookedRoomDetails from "./components/RoomDetailsPageComponents/BookedRoomDetails";
+
+// Protected Routes
+import AdminRoute from "./components/common/AdminRoute";
+import GuestRoute from "./components/common/GuestRoute";
+import ReceptionRoute from "./components/common/ReceptionRoute";
+import RestaurantRoute from "./components/common/RestaurantRoute";
+
 function App() {
   return (
     <React.Fragment>
-      <ToastContainer position="top-center" autoClose={5000000} />
+      <ToastContainer position="top-center" autoClose={5000} />
       <NavBar />
-      <Switch>
-        <Route exact path="/about" component={AboutPage} />
-        {/* <Route exact path="/search" component={SearchPage} /> */}
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/about" component={AboutPage} />
-        <Route exact path="/signin" component={SigninPage} />
-        <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/logout" component={Logout} />
-        <Route exact path="/forgotpassword" component={ForgotPassword} />
-        <Route exact path="/admin/forgotpassword" component={ForgotPassword} />
-        <Route exact path="/resetpassword/:token" component={ResetPassword} />
-        <Route exact path="/hoteldetails/:hotelId" component={HotelDetails} />
-        <Route exact path="/linkreview/:id" component={LinkReview} />
-        <Route exact path="/hotel/roomdetails/:roomId" component={RoomDetails} />
-        <Route exact path="/reception/signin" component={SigninPage} />
-        <Route exact path="/restaurant/signin" component={SigninPage} />
-        <Route exact path="/admin/signin" component={SigninPage} />
-        <Route exact path="/admin/signup" component={SignupPage} />
-        <Route exact path="/" component={LandingPage} />
 
-        <AdminRoute exact path="/admin/reception/signup/:hotelId" component={SignupPage} />
-        <AdminRoute exact path="/admin/reception/account/:receptionId" component={ReceptionDashboard} />
-        <AdminRoute exact path="/admin/restaurant/signup/:hotelId" component={SignupPage} />
-        <AdminRoute
-          exact
-          path="/admin/restaurant/account/:restaurantId"
-          component={RestaurantDashboard}
-        />
-        <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
-        <AdminRoute exact path="/admin/room/:hotelId" component={RoomCard} />
-        <AdminRoute exact path="/admin/addHotel/:id" component={ListPropertyPage} />
-        <AdminRoute exact path="/admin/addHotel" component={ListPropertyPage} />
-        <AdminRoute exact path="/admin/manageHotel/roomBoy/:roomBoyId" component={AddRoomBoy} />
-        <AdminRoute exact path="/admin/manageHotel/:hotelId" component={HotelSidebar} />
-        <AdminRoute exact path="/admin/addroom/:hotelId" component={AddRoom} />
-        <AdminRoute exact path="/admin/editroom/:roomId" component={AddRoom} />
-        <Route exact path="/admin/resetpassword/:token" component={ResetPassword} />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/resetpassword/:token" element={<ResetPassword />} />
+        <Route path="/hoteldetails/:hotelId" element={<HotelDetails />} />
+        <Route path="/hotel/roomdetails/:roomId" element={<RoomDetails />} />
+        <Route path="/linkreview/:id" element={<LinkReview />} />
 
-        <GuestRoute exact path="/dashboard" component={GuestDashboard} />
-        <GuestRoute exact path="/bookedroomdetails" component={BookedRoomDetails} />
+        {/* Admin Routes */}
+        <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+        <Route path="/admin/room/:hotelId" element={<AdminRoute><RoomCard /></AdminRoute>} />
+        <Route path="/admin/addHotel/:id?" element={<AdminRoute><ListPropertyPage /></AdminRoute>} />
+        <Route path="/admin/manageHotel/:hotelId" element={<AdminRoute><HotelSidebar /></AdminRoute>} />
+        <Route path="/admin/manageHotel/roomBoy/:roomBoyId" element={<AdminRoute><AddRoomBoy /></AdminRoute>} />
+        <Route path="/admin/addroom/:hotelId" element={<AdminRoute><AddRoom /></AdminRoute>} />
+        <Route path="/admin/editroom/:roomId" element={<AdminRoute><AddRoom /></AdminRoute>} />
 
-        <ReceptionRoute exact path="/reception/dashboard/checkin/:bookingId" component={BookedCheckIn} />
-        <ReceptionRoute exact path="/reception/dashboard/checkout/:bookingId" component={CheckOut} />
-        <ReceptionRoute exact path="/reception/dashboard" component={Sidebar} />
+        {/* Guest Routes */}
+        <Route path="/dashboard" element={<GuestRoute><GuestDashboard /></GuestRoute>} />
+        <Route path="/bookedroomdetails" element={<GuestRoute><BookedRoomDetails /></GuestRoute>} />
 
-        <RestaurantRoute exact path="/restaurant/dashboard" component={RestaurantSidebar} />
-        <RestaurantRoute exact path="/restaurant/addfooditem" component={AddFoodItem} />
-        <RestaurantRoute exact path="/restaurant/additemstobill/:bookingId" component={AddItemsToBill} />
+        {/* Receptionist Routes */}
+        <Route path="/reception/dashboard" element={<ReceptionRoute><Sidebar /></ReceptionRoute>} />
+        <Route path="/reception/dashboard/checkin/:bookingId" element={<ReceptionRoute><BookedCheckIn /></ReceptionRoute>} />
+        <Route path="/reception/dashboard/checkout/:bookingId" element={<ReceptionRoute><CheckOut /></ReceptionRoute>} />
 
-        <Route component={NotFound} />
-      </Switch>
-      {window.location.pathname.includes("/reception/dashboard") ||
-      window.location.pathname.includes("/restaurant/dashboard") ||
-      window.location.pathname.includes("/restaurant/additemstobill") ||
-      window.location.pathname.includes("/admin/manageHotel") ? null : (
-        <Footer />
-      )}
+        {/* Restaurant Routes */}
+        <Route path="/restaurant/dashboard" element={<RestaurantRoute><RestaurantSidebar /></RestaurantRoute>} />
+        <Route path="/restaurant/addfooditem" element={<RestaurantRoute><AddFoodItem /></RestaurantRoute>} />
+        <Route path="/restaurant/additemstobill/:bookingId" element={<RestaurantRoute><AddItemsToBill /></RestaurantRoute>} />
+
+        {/* 404 Not Found */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {/* Conditionally Render Footer */}
+      {!["/reception/dashboard", "/restaurant/dashboard", "/restaurant/additemstobill", "/admin/manageHotel"].some(path => window.location.pathname.includes(path)) && <Footer />}
     </React.Fragment>
   );
 }
