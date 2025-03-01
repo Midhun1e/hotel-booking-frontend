@@ -5,7 +5,7 @@ import Rating from "./Rating";
 import Invoice from "./Invoice";
 import * as Yup from "yup";
 import {Formik, Form} from "formik";
-import {useHistory} from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import {getBookings, addReview, editReview, getReviewById, downloadInvoice} from "../../api/guest";
 import {displayNotification} from "./../../services/notificationService";
 import "../../css/Booked_Dashboard.css";
@@ -18,7 +18,7 @@ const reviewSchema = Yup.object().shape({
 console.log(reviewSchema)
 
 function History() {
-  const history = useHistory();
+  const history = useNavigate ();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [bookings, setBookings] = useState();
   const [hotelId, setHotelId] = useState();
